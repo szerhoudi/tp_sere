@@ -30,7 +30,7 @@
       $html = '';
       if( isset( $_POST[ 'Upload' ] ) ) {
         // Where are we going to be writing to?
-        $target_path  = "/var/www/local.test/tp_sere/uploaded_files";
+        $target_path  = "/opt/bitnami/apache2/htdocs/tp_sere/uploads/";
         $target_path .= basename( $_FILES[ 'uploaded' ][ 'name' ] );
 
         // File information
