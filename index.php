@@ -39,13 +39,13 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="upload/level_1.php">Level 1</a>
+              <a class="nav-link" href="level1/">Level 1</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="upload/level_2.php">Level 2</a>
+              <a class="nav-link" href="level2/">Level 2</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="upload/level_3.php">Level 3</a>
+              <a class="nav-link" href="level3/">Level 3</a>
             </li>
           </ul>
         </div>
@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="upload/level_1.php">
+            <a href="level1/">
               <h2 class="post-title">
                 Level 1 : Low
               </h2>
@@ -84,7 +84,7 @@
           </div>
           <hr>
           <div class="post-preview">
-            <a href="upload/level_2.php">
+            <a href="level2/">
               <h2 class="post-title">
                 Level 2 : Medium
               </h2>
@@ -96,7 +96,7 @@
           </div>
           <hr>
           <div class="post-preview">
-            <a href="upload/level_3.php">
+            <a href="level3/">
               <h2 class="post-title">
                 Level 3 : High
               </h2>

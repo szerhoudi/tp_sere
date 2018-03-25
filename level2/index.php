@@ -33,15 +33,28 @@
         $target_path  = "/var/www/local.test/tp_sere/uploaded_files";
         $target_path .= basename( $_FILES[ 'uploaded' ][ 'name' ] );
 
+        // File information
+        $uploaded_name = $_FILES[ 'uploaded' ][ 'name' ];
+        $uploaded_type = $_FILES[ 'uploaded' ][ 'type' ];
+        $uploaded_size = $_FILES[ 'uploaded' ][ 'size' ];
+
         // Can we move the file to the upload folder?
-        if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
-          // No
-          $html .= '<pre>Your image was not uploaded.</pre>';
-          print_r($_FILES);
+        if( ( $uploaded_type == "image/jpeg" || $uploaded_type == "image/png" ) &&
+          ( $uploaded_size < 100000 ) ) {
+
+          // Can we move the file to the upload folder?
+          if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
+            // No
+            $html .= '<pre>Your image was not uploaded.</pre>';
+          }
+          else {
+            // Yes!
+            $html .= "<pre>" . $target_path . " succesfully uploaded!</pre>";
+          }
         }
         else {
-          // Yes!
-          $html .= "<pre>" . $target_path . " succesfully uploaded!</pre>";
+          // Invalid file
+          $html .= '<pre>Your image was not uploaded. We can only accept JPEG or PNG images.</pre>';
         }
       }
 
@@ -61,13 +74,13 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="level_1.php">Level 1</a>
+              <a class="nav-link" href="../level1/">Level 1</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="level_2.php">Level 2</a>
+              <a class="nav-link" href="#">Level 2</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="level_3.php">Level 3</a>
+              <a class="nav-link" href="../level3/">Level 3</a>
             </li>
           </ul>
         </div>
@@ -81,8 +94,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1 style="font-size: 50px;">Level 1 : Low</h1>
-              <span class="subheading">This level will not check the contents of the file being uploaded in any way. It relies only on trust.</span>
+              <h1 style="font-size: 50px;">Level 2 : Medium</h1>
+              <span class="subheading">When using this level, it will check the reported file type from the client when its being uploaded.</span>
             </div>
           </div>
         </div>

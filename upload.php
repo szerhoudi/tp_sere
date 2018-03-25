@@ -15,7 +15,7 @@
   print_r($_FILES);
   if(!empty($_FILES['uploaded_file']))
   {
-    $path = "/var/www/local.test/tp_sere/uploads/";
+    $path = "/opt/bitnami/apache2/htdocs/tp_sere/uploads/";
     $path = $path . basename( $_FILES['uploaded_file']['name']);
     print_r($path);
 
