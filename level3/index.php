@@ -111,7 +111,7 @@
 
          <?php 
                 $WarningHtml = '';
-                $PHPUploadPath = "/var/www/local.test/tp_sere/uploaded_files";
+                $PHPUploadPath = "/opt/bitnami/apache2/htdocs/tp_sere/uploads/";
                 if( !is_writable( $PHPUploadPath ) ) {
                   $WarningHtml .= "<p class='alert alert-warning'>Incorrect folder permissions: " . $PHPUploadPath ."<br/><em>Folder is not writable.</em></p>";
                 }
