@@ -30,13 +30,14 @@
       $html = '';
       if( isset( $_POST[ 'Upload' ] ) ) {
         // Where are we going to be writing to?
-        $target_path  = "uploaded_files/";
+        $target_path  = "/var/www/local.test/tp_sere/uploaded_files";
         $target_path .= basename( $_FILES[ 'uploaded' ][ 'name' ] );
 
         // Can we move the file to the upload folder?
         if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
           // No
           $html .= '<pre>Your image was not uploaded.</pre>';
+          print_r($_FILES);
         }
         else {
           // Yes!
@@ -93,9 +94,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <?php 
+         <?php 
                 $WarningHtml = '';
-                $PHPUploadPath = "uploaded_files/";
+                $PHPUploadPath = "/var/www/local.test/tp_sere/uploaded_files";
                 if( !is_writable( $PHPUploadPath ) ) {
                   $WarningHtml .= "<p class='alert alert-warning'>Incorrect folder permissions: " . $PHPUploadPath ."<br/><em>Folder is not writable.</em></p>";
                 }
@@ -103,7 +104,7 @@
                   $WarningHtml .= "<p class='alert alert-warning'>The PHP module <em>GD is not installed</em>.</p>";
                 }
                 echo $WarningHtml;
-          ?>
+          ?> 
 
           <form enctype="multipart/form-data" action="#" method="POST">
             <div class="control-group">
