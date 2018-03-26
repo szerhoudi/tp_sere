@@ -41,8 +41,7 @@
 
         // Is it an image?
         if( ( strtolower( $uploaded_ext ) == "jpg" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
-          ( $uploaded_size < 100000 ) &&
-          getimagesize( $uploaded_tmp ) ) {
+          ( $uploaded_size < 100000 ) ) {
 
           // Can we move the file to the upload folder?
           if( !move_uploaded_file( $uploaded_tmp, $target_path ) ) {
